@@ -127,7 +127,7 @@
 }
 
 .add-title::placeholder {
-  color: var(--c-dark-primary-tint-1);
+  color: var(--c-dark-secondary);
 }
 
 .add-note-text {
@@ -137,10 +137,11 @@
   resize: none;
   background-color: var(--c-dark-primary-tint-2);
   font-size: 1.8rem;
+  color: var(--c-dark-secondary);
 }
 
 .add-note-text::placeholder {
-  color: var(--c-dark-primary-tint-1);
+  color: var(--c-dark-secondary);
 }
 
 .add-note-text:focus {
