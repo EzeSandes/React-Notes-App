@@ -1,13 +1,161 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+:root {
+  --c-dark-primary: #202124;
+  --c-dark-primary-tint-1: #36373a;
+  --c-dark-primary-tint-2: #636363;
+
+  --c-dark-secondary: #e8eaed;
+
+  --c-dark-tertiary: #fdf2b0;
+  --c-dark-tertiary-tint-1: #cac28d;
+
+  --border-radius-md: 10px;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+/******************* HEADER **************** */
+/********************************************** */
+
+.section-header {
+  padding: 2rem 0;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
+
+/******************* SEARCH **************** */
+/********************************************** */
+
+.search {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+
+  background-color: var(--c-dark-primary-tint-2);
+  border-radius: var(--border-radius-md);
+  padding: 0.5rem;
+  margin-bottom: 1.6rem;
+  height: 3.6rem;
+}
+
+.search .input {
+  color: var(--c-dark-secondary);
+  font-size: 2.4rem;
+}
+
+.search .input::placeholder {
+  color: var(--c-dark-primary-tint-1);
+}
+
+.icon-search {
+  color: var(--c-dark-secondary);
+}
+/******************* NOTE ITEM **************** */
+/********************************************** */
+
+.section-notes {
+  margin-top: 1rem;
+  padding: 4rem 0;
+}
+
+.notes-list {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fill, minmax(26rem, 1fr));
+}
+
+.note {
+  list-style: none;
+  padding: 1rem;
+  color: var(--c-dark-secondary);
+  border: solid 1px var(--c-dark-secondary);
+  border-radius: var(--border-radius-md);
+  min-height: 24rem; /* || 32rem*/
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 2.4rem;
+  white-space: pre-wrap;
+}
+
+.header-note-box {
+  margin-bottom: 1.5rem;
+}
+
+.note-text {
+  font-weight: var(--font-w-400);
+  font-size: 1.8rem;
+  min-height: 50%;
+}
+
+.note-footer,
+.note-icons-box {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.note-icons-box {
+  gap: 2rem;
+  font-size: 2.4rem;
+}
+
+.edit-icon,
+.trash-icon {
+  cursor: pointer;
+  transition: all var(--transition-time);
+}
+
+.edit-icon:hover,
+.trash-icon:hover {
+  color: var(--c-dark-primary-tint-2);
+}
+
+/******************* ADD NOTE **************** */
+/********************************************** */
+.note.new {
+  background-color: var(--c-dark-primary-tint-2);
+}
+
+.note.new .note-footer {
+  justify-content: end;
+}
+
+.add-title {
+  font-size: 2.4rem;
+  color: var(--c-dark-secondary);
+}
+
+.add-title::placeholder {
+  color: var(--c-dark-primary-tint-1);
+}
+
+.add-note-text {
+  width: 100%;
+  height: 100%;
+  border: none;
+  resize: none;
+  background-color: var(--c-dark-primary-tint-2);
+  font-size: 1.8rem;
+}
+
+.add-note-text::placeholder {
+  color: var(--c-dark-primary-tint-1);
+}
+
+.add-note-text:focus {
+  outline: none;
+}
+/******************* **************** */
+/********************************************** */
+/******************* **************** */
+/********************************************** */
+
+/*
+- Font sizes (px)
+10 / 12 / 14 / 16 / 18 / 20 / 24 / 30 / 36 / 44 / 52 / 62 / 74 / 86 / 98
+
+- Spacing system (px)
+2 / 4 / 8 / 12 / 16 / 24 / 32 / 48 / 64 / 80 / 96 / 128
+
+*/

@@ -1,0 +1,120 @@
+/* FONT */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+:root {
+  --font-w-bold: 600;
+  --font-w-regular: 400;
+
+  --transition-time: 0.4s;
+  --letter-spacing-md: 0.75px;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  font-weight: var(--font-bold);
+  font-size: 1.8rem;
+  background-color: var(--c-dark-primary);
+}
+
+/******************* CONTAINER **************** */
+/********************************************** */
+
+.container {
+  max-width: 120rem;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+/******************* HEADING **************** */
+/********************************************** */
+
+.heading-primary,
+.heading-secondary {
+  font-family: inherit;
+  font-weight: var(--font-w-bold);
+  color: var(--c-dark-secondary);
+}
+.heading-primary {
+  font-size: 3.6rem;
+}
+.heading-secondary {
+  letter-spacing: var(--letter-spacing-md);
+  font-size: 2.4rem;
+}
+/******************* BTN **************** */
+/********************************************** */
+
+.btn {
+  cursor: pointer;
+  border: none;
+}
+
+.toggle {
+  font-size: 3.6rem;
+  cursor: pointer;
+  border: none;
+  padding: 0.5rem;
+  border-radius: 50%;
+  background-color: var(--c-dark-tertiary);
+  color: var(--c-dark-primary);
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  transition: all var(--transition-time);
+}
+
+.toggle:hover {
+  background-color: var(--c-dark-tertiary-tint-1);
+}
+
+.btn-save {
+  padding: 0.5rem 1rem;
+  background-color: var(--c-dark-tertiary);
+  font-weight: var(--font-w-bold);
+  border-radius: var(--border-radius-md);
+  transition: all var(--transition-time);
+}
+
+.btn-save:hover {
+  background-color: var(--c-dark-tertiary-tint-1);
+}
+/******************* INPUTS **************** */
+/********************************************** */
+
+.input {
+  border: none;
+  background-color: inherit;
+  width: 100%;
+}
+
+.input:focus {
+  outline: none;
+}
+
+/******************* **************** */
+/********************************************** */
+/******************* **************** */
+/********************************************** */
+/******************* **************** */
+/********************************************** */
+
+/*
+- Font sizes (px)
+10 / 12 / 14 / 16 / 18 / 20 / 24 / 30 / 36 / 44 / 52 / 62 / 74 / 86 / 98
+
+- Spacing system (px)
+2 / 4 / 8 / 12 / 16 / 24 / 32 / 48 / 64 / 80 / 96 / 128
+
+*/

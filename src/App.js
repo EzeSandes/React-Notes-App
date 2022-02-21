@@ -1,23 +1,35 @@
-import logo from './logo.svg';
-import './App.css';
+// HOOKS
+import { useState } from 'react';
+
+// COMPONENTS
+import Header from './components/Header';
+import Search from './components/Search';
+import NotesList from './components/NotesList';
+
+// Packages
+import { nanoid } from 'nanoid';
 
 function App() {
+  const [notes, setNotes] = useState([
+    {
+      id: nanoid(10),
+      title: 'Learn React',
+      text: 'Practice, practice, practice',
+      date: '01/02/2022',
+    },
+    {
+      id: nanoid(10),
+      title: 'Go to the shopping',
+      text: 'I’d buy all i want if I had the money to do it :D',
+      date: '01/02/2022',
+    },
+  ]);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className='container'>
+      <Header />
+      <Search />
+      <NotesList />
     </div>
   );
 }

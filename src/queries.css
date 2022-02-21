@@ -1,0 +1,5 @@
+@media (min-width: 550px) {
+  .notes-list {
+    grid-template-columns: repeat(auto-fill, minmax(38rem, 1fr));
+  }
+}
