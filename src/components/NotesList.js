@@ -2,7 +2,12 @@ import React from 'react';
 import Note from './Note';
 import AddNote from './AddNote';
 
-const NotesList = ({ notes, handleAddNote, handleDeleteNote }) => {
+const NotesList = ({
+  notes,
+  handleAddNote,
+  handleDeleteNote,
+  handleEditNote,
+}) => {
   return (
     <main>
       <section className='section-notes'>
@@ -14,6 +19,7 @@ const NotesList = ({ notes, handleAddNote, handleDeleteNote }) => {
                 note={note}
                 key={note.id}
                 handleDeleteNote={handleDeleteNote}
+                handleEditNote={handleEditNote}
               />
             ))
             .reverse()}

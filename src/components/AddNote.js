@@ -22,6 +22,7 @@ const AddNote = ({ handleAddNote }) => {
             type='text'
             title='Title'
             required
+            autoFocus
             placeholder='Enter a Title'
             className='input add-title'
           />

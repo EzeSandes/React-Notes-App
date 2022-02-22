@@ -1,5 +1,5 @@
 // HOOKS
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 // COMPONENTS
 import Header from './components/Header';
@@ -9,25 +9,21 @@ import NotesList from './components/NotesList';
 // Packages
 import { nanoid } from 'nanoid';
 
-// DEFINES
+// CONFIGS
+const LOCAL_DATA_KEY = 'react-notes-data';
 const ID_LENGTH = 10;
 
+const getLocalNotes = () => {
+  return JSON.parse(localStorage.getItem(LOCAL_DATA_KEY) || []);
+};
+
 function App() {
-  const [notes, setNotes] = useState([
-    {
-      id: nanoid(ID_LENGTH),
-      title: 'Learn React',
-      text: 'Practice, practice, practice',
-      date: '01/02/2022',
-    },
-    {
-      id: nanoid(ID_LENGTH),
-      title: 'Go to the shopping',
-      text: "I'd buy all i want if I had the money to do it :D",
-      date: '01/04/2022',
-    },
-  ]);
+  const [notes, setNotes] = useState(getLocalNotes());
   const [searchText, setSearchText] = useState('');
+
+  useEffect(() => {
+    localStorage.setItem(LOCAL_DATA_KEY, JSON.stringify(notes));
+  }, [notes]);
 
   const addNote = newItem => {
     const newNote = {
@@ -44,6 +40,20 @@ function App() {
     setNotes(notes.filter(note => note.id !== id));
   };
 
+  const editNote = newNote => {
+    const editedNote = {
+      id: newNote.id,
+      title: newNote.newTitle,
+      text: newNote.newText,
+      date: new Date().toLocaleDateString(),
+    };
+
+    console.log(editedNote);
+    const newNotes = notes.filter(note => note.id !== editedNote.id);
+    // Save the edited Note with the SAME Id.
+    setNotes([...newNotes, editedNote]);
+  };
+
   return (
     <div className='container'>
       <Header />
@@ -57,6 +67,7 @@ function App() {
         )}
         handleAddNote={addNote}
         handleDeleteNote={deleteNote}
+        handleEditNote={editNote}
       />
     </div>
   );

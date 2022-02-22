@@ -147,8 +147,21 @@
 .add-note-text:focus {
   outline: none;
 }
-/******************* **************** */
+/******************* EDIT NOTE **************** */
 /********************************************** */
+
+.note.edit {
+  background-color: var(--c-dark-primary-tint-1);
+}
+
+.edit .add-title::placeholder,
+.edit .add-note-text::placeholder {
+  color: var(--c-dark-primary-tint-2);
+}
+
+.edit .add-note-text {
+  background-color: inherit;
+}
 /******************* **************** */
 /********************************************** */
 

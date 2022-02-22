@@ -6,7 +6,7 @@ const Search = ({ searchText, setSearchText }) => {
     <div className='search'>
       <IoSearchOutline className='icon-search' />
       <input
-        onChange={e => setSearchText(e.target.value)}
+        onChange={e => setSearchText(e.target.value.toLowerCase())}
         value={searchText}
         className='input'
         type='text'
