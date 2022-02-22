@@ -7,6 +7,16 @@
 
   --transition-time: 0.4s;
   --letter-spacing-md: 0.75px;
+
+  --c-light-primary: #fefae0;
+  --c-light-primary-shade-1: #aa825c;
+  --c-light-primary-shade-2: #d4a373;
+  --c-light-primary-shade-3: #c4a88d;
+  --c-light-secondary: #7f5539;
+  --c-light-tertiary: #fdf2b0;
+
+  --c-light-main-gray: #c4c4c4;
+  --c-light-main-gray-shade-1: #636363;
 }
 
 * {
@@ -103,8 +113,57 @@ body {
   outline: none;
 }
 
-/******************* **************** */
+/******************* DARK MODE **************** */
 /********************************************** */
+body.dark-mode {
+  transition: all var(--transition-time);
+  background-color: var(--c-light-primary);
+}
+
+.dark-mode .heading-primary {
+  color: var(--c-light-secondary);
+}
+
+.dark-mode .toggle {
+  color: var(--c-light-primary);
+  background-color: var(--c-light-secondary);
+}
+
+.dark-mode .search {
+  background-color: var(--c-light-main-gray);
+}
+
+.dark-mode .icon-search,
+.dark-mode .search .input,
+.dark-mode .search .input::placeholder {
+  color: var(--c-light-main-gray-shade-1);
+}
+
+.dark-mode .note.new {
+  border: 1px solid var(--c-light-primary-shade-2);
+}
+
+.dark-mode .note.new,
+.dark-mode .add-note-text {
+  color: var(--c-light-primary);
+  background-color: var(--c-light-primary-shade-1);
+}
+
+.dark-mode .note,
+.dark-mode .heading-secondary {
+  background-color: var(--c-light-tertiary);
+  color: var(--c-light-secondary);
+}
+
+.dark-mode .note.edit {
+  background-color: var(--c-light-primary-shade-3);
+}
+
+.dark-mode .note.edit .add-note-text,
+.dark-mode .note.edit .add-title {
+  color: var(--c-light-secondary);
+}
+
 /******************* **************** */
 /********************************************** */
 /******************* **************** */

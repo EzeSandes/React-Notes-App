@@ -20,10 +20,16 @@ const getLocalNotes = () => {
 function App() {
   const [notes, setNotes] = useState(getLocalNotes());
   const [searchText, setSearchText] = useState('');
+  // const [darkMode, setDarkMode] = useState(false);
 
   useEffect(() => {
     localStorage.setItem(LOCAL_DATA_KEY, JSON.stringify(notes));
   }, [notes]);
+
+  // If you want the light mode by default
+  // useEffect(() => {
+  //   document.body.classList.toggle('dark-mode');
+  // }, []);
 
   const addNote = newItem => {
     const newNote = {
@@ -48,7 +54,6 @@ function App() {
       date: new Date().toLocaleDateString(),
     };
 
-    console.log(editedNote);
     const newNotes = notes.filter(note => note.id !== editedNote.id);
     // Save the edited Note with the SAME Id.
     setNotes([...newNotes, editedNote]);
