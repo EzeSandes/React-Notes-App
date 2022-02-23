@@ -13,10 +13,6 @@ import { nanoid } from 'nanoid';
 const LOCAL_DATA_KEY = 'react-notes-data';
 const ID_LENGTH = 10;
 
-const getLocalNotes = () => {
-  return JSON.parse(localStorage.getItem(LOCAL_DATA_KEY) || []);
-};
-
 function App() {
   const [notes, setNotes] = useState(getLocalNotes());
   const [searchText, setSearchText] = useState('');
@@ -30,6 +26,11 @@ function App() {
   // useEffect(() => {
   //   document.body.classList.toggle('dark-mode');
   // }, []);
+
+  function getLocalNotes() {
+    const localNotes = localStorage.getItem(LOCAL_DATA_KEY);
+    return localNotes ? JSON.parse(localNotes) : [];
+  }
 
   const addNote = newItem => {
     const newNote = {
